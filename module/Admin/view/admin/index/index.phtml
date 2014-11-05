@@ -1,0 +1,81 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Categoria', 'Gasto (R$)'],
+          ['Alimentação',  1000],
+          ['Transporte',  1170],
+          ['Saúde',  660],
+          ['Educação',  1030]
+        ]);
+
+        var options = {
+          title: 'Gastos do último mês',
+          vAxis: {title: 'Categoria',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Categoria', 'Gasto (R$)'],
+          ['Alimentação',  6000],
+          ['Transporte',  5500],
+          ['Saúde',  1200],
+          ['Educação',  50]
+        ]);
+
+        var options = {
+          title: 'Gastos do último mês',
+          vAxis: {title: 'Categoria',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+
+        chart.draw(data, options);
+      }
+</script>
+
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?>   
+				</div>
+				<div class="col-md-9">
+					<h2>Informações gerais sobre as contas cadastradas</h2>
+					<p>Cada gráfico exibe um resumo de gastos fe acordo com as categorias cadastradas no sistema</p>
+					<br />
+					
+					<h4>
+						<a href="#"><span title="Gerenciar conta" alt="Gerenciar conta" class="glyphicon glyphicon-cog"></span></a> Conta 2222 - Banco do Brasil <span class="label label-success">Saldo: R$ 30.000,00</span>
+					</h4>
+					<div id="chart_div"></div>
+					
+					<br />
+					
+					<h4>
+						<a href="#"><span title="Gerenciar conta" alt="Gerenciar conta" class="glyphicon glyphicon-cog"></span></a> Caixa pessoal <span class="label label-danger">Saldo: R$ -50,00</span>
+					</h4>
+					<div id="chart_div2"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</section>
+</main>
